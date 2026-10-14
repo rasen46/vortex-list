@@ -41,8 +41,8 @@ const columnPresets = {
 		name: 'Creator',
 		index: 7
 	}, {
-		name: 'Record Holder',
-		index: 5
+		name: 'All-jumper',
+		index: 4
 	}, {
 		name: 'Gameplay Style',
 		index: 8
@@ -61,8 +61,8 @@ const cardPresets = {
 	},
 	'Unverified List': {
 		creator: 7,
-		by: 5,
-		byLabel: 'record by',
+		by: 4,
+		byLabel: 'alljumped by',
 		style: 8,
 		quality: 10
 	}
