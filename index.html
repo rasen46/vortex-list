@@ -1,28 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Vortex Obby List</title>
+		<link rel="icon" type="image/x-icon" href="/img/fav.png">
 		<link rel="stylesheet" href="styles.css">
+		<script src="script.js" defer></script>
 	</head>
 
 	<body>
-		<header>
-			<img class="title" src="logo.svg" alt="logo"></img>
-			<input type="image" src="settings.svg" class="settings">
+		<header class="header">
+			<a href="/" class="logo"><img src="/img/logo.svg" alt="Vortex Obby List"></a>
+			<div class="headerTitle">Vortex Obby List</div>
+			<button class="iconButton settings" aria-label="Settings" title="Settings"><img src="/img/settings.svg" alt=""></button>
 		</header>
 		<div class="layout">
-			<aside class="sidebar">
-				<div class="section">
-					<button class="list">Section</button>
-				</div>
-				<div class="section">
-					<button class="info">Section</button>
-				</div>
+			<aside class="sidebar" aria-label="Lists">
+				<button class="sidebarButton active" data-sheet="Main List" aria-label="Verified list" title="Verified list"><span class="sideIcon">✓</span></button>
+				<button class="sidebarButton" data-sheet="Unverified List" aria-label="Unverified list" title="Unverified list"><span class="sideIcon">?</span></button>
 			</aside>
 			<main class="content">
-				
+				<aside class="viewSettings">
+					<h2>View Properties</h2>
+					<label class="searchLabel" for="search">Search obbies</label>
+					<input id="search" type="search" placeholder="Name, creator, tier…" autocomplete="off">
+					<div id="loadStatus" class="loadStatus" role="status">Loading spreadsheet…</div>
+				</aside>
+				<section class="catalog" aria-label="Obby table">
+					<div class="tableTop">
+						<div>
+							<h1 id="tableTitle">Verified Obby List</h1>
+							<p id="resultCount">Loading entries…</p>
+						</div>
+					</div>
+					<div class="tableScroll">
+						<table class="obbyTable">
+							<thead id="header"></thead>
+							<tbody id="rows"></tbody>
+						</table>
+					</div>
+				</section>
 			</main>
+		</div>
+		<div class="obbyCard" id="obbyCard" role="tooltip" hidden>
+			<div class="cardImg"><img id="cardImg" alt=""></div>
+			<div class="cardHead">
+				<div class="cardName" id="cardName"></div>
+				<div class="cardMeta" id="cardMeta"></div>
+			</div>
+			<div class="cardWho">
+				<div class="cardCreator" id="cardCreator"></div>
+				<div class="cardBy" id="cardBy"></div>
+			</div>
+			<div class="cardGrade" id="cardGrade"></div>
 		</div>
 	</body>
 
