@@ -185,7 +185,7 @@ function fillCard(row) {
 	const by = cellText(row[preset.by]).trim();
 	const grade = cellText(row[preset.quality]).trim();
 	cardEls.name.textContent = name;
-	cardEls.meta.textContent = `${tier} | ${style}`;
+	cardEls.meta.textContent = `${tier}`;
 	cardEls.creator.textContent = `by ${creator || 'unknown'}`;
 	cardEls.by.textContent = by ? `${preset.byLabel} ${by}` : (currentSheet === 'Main List' ? 'verifier unknown' : 'unverified');
 	cardEls.grade.textContent = grade;
